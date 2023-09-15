@@ -1,6 +1,8 @@
 using Unity.Entities;
 using UnityEngine;
 
+using Ratel.CharacterController;
+
 namespace Ratel
 {
     [DisallowMultipleComponent]
@@ -11,6 +13,7 @@ namespace Ratel
             public override void Bake(CubeInputAuthoring authoring)
             {
                 Entity entity = this.GetEntity(TransformUsageFlags.Dynamic);
+                AddComponent<CharacterControllerInput>(entity);
                 AddComponent<CubeInput>(entity);
             }
         }
